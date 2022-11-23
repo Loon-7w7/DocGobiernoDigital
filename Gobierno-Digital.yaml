@@ -3,7 +3,7 @@ info:
   title: Gobierno Digital
   version: 1.0.0
 servers:
-  - url: https://egx-vu-gobiernodigital.azurewebsites.net
+  - url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
 tags:
   - name: Lista de predial
   - name: Notificaciones
@@ -44,11 +44,21 @@ paths:
                 Clave: ''
                 Propietario: ''
                 Direcion: ''
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              $ref: ./models/Filtros-predial.yaml
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+            multipart/form-data:
+              schema:
+                $ref: ./models/Lista-predial.yaml
   /api/Catastral/GetConPath/2:
     get:
       tags:
@@ -73,9 +83,7 @@ paths:
           in: header
           schema:
             type: string
-          example: >-
-            Bearer
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQ2NzAxNjBjLWY0NzgtNDk1Ny05ZTBmLTRkNTU4MTZjZTdmMiIsImlhdCI6IjExLzIzLzIwMjIgNDozMTowMSBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjMiLCJleHAiOjE3MDA3NTcwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI1OS8ifQ.cvD4VXi6WV2tNW5ZrnowpLIcTEO513aJhnPZ96nEaDY
+          example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQ2NzAxNjBjLWY0NzgtNDk1Ny05ZTBmLTRkNTU4MTZjZTdmMiIsImlhdCI6IjExLzIzLzIwMjIgNDozMTowMSBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjMiLCJleHAiOjE3MDA3NTcwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI1OS8ifQ.cvD4VXi6WV2tNW5ZrnowpLIcTEO513aJhnPZ96nEaDY
       responses:
         '200':
           description: Successful response
@@ -86,9 +94,7 @@ paths:
       tags:
         - Notificaciones
       summary: Notificación de pago corto
-      description: >-
-        recibe por el body el precio pagado, el folio y el correo del tramite y
-        actualiza a pagado el predial
+      description: 'recibe por el body el precio pagado, el folio y el correo del tramite y actualiza a pagado el predial'
       requestBody:
         content:
           application/json:
@@ -134,7 +140,7 @@ paths:
                 numero: '252'
                 cruzamientouno: '12'
                 cruzamientodos: '425'
-                direcion: calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342
+                direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
                 codigopostal: '9971235'
                 adeudo: 4
                 propietarioActual: Hennrry Chan
@@ -164,7 +170,7 @@ paths:
                 numero: '252'
                 cruzamientouno: '12'
                 cruzamientodos: '425'
-                direcion: calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342
+                direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
                 codigopostal: '9971235'
                 adeudo: 4
                 propietarioActual: Hennrry Chan
