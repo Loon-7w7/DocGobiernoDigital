@@ -1,0 +1,63 @@
+type: array
+items:
+  type: object
+  properties:
+    id:
+      type: string
+    valorCatastral:
+      type: integer
+    folioCatastral:
+      type: string
+    adeudo:
+      type:
+        - integer
+        - number
+    propietarioActual:
+      type: string
+x-examples:
+  Example 1:
+    - id: 2a7613c6-dda0-4c08-b02e-185a3123b5b5
+      valorCatastral: 4
+      folioCatastral: '2399'
+      adeudo: 4
+      propietarioActual: Hennrry Chan
+    - id: 4f4f1def-afbe-4532-9164-2f0728a386f0
+      valorCatastral: 3
+      folioCatastral: '2399'
+      adeudo: 3
+      propietarioActual: Mario Mena
+    - id: 8f90e5e0-217e-43af-8f35-cd1d7328bd53
+      valorCatastral: 2875498
+      folioCatastral: '2399'
+      adeudo: 2700
+      propietarioActual: da
+    - id: 98ac148c-1a3a-4364-ab02-f1d846f7b7c2
+      valorCatastral: 20
+      folioCatastral: '23556'
+      adeudo: 100
+      propietarioActual: fer
+    - id: d10d7a56-abbb-4363-bba6-f6c23a92874e
+      valorCatastral: 2
+      folioCatastral: '2399'
+      adeudo: 1
+      propietarioActual: Jesús Pérez
+    - id: d167dfec-0dcb-422b-b06d-24ad9523a41e
+      valorCatastral: 4
+      folioCatastral: '2399'
+      adeudo: 4
+      propietarioActual: Hennrry Chan
+    - id: d3c3df65-79f2-41d0-865a-40f7f14d5d25
+      valorCatastral: 584265.87
+      folioCatastral: '19478'
+      adeudo: 900
+      propietarioActual: asd
+    - id: d9084ebe-ea30-45c8-bebe-d7e4402c64d0
+      valorCatastral: 2
+      folioCatastral: '2399'
+      adeudo: 2
+      propietarioActual: Didier Hobak
+    - id: e302622c-b4c6-4b93-b58e-5358d6f9391d
+      valorCatastral: 1123250
+      folioCatastral: '20785'
+      adeudo: 101.1
+      propietarioActual: asd

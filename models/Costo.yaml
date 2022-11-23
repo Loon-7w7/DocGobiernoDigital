@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: string
+  valorCatastral:
+    type: integer
+  folioCatastral:
+    type: 'null'
+  adeudo:
+    type: integer
+  propietarioActual:
+    type: 'null'
+x-examples:
+  Example 1:
+    id: 00000000-0000-0000-0000-000000000000
+    valorCatastral: 0
+    folioCatastral: null
+    adeudo: 0
+    propietarioActual: null
+examples:
+  - id: string
+    valorCatastral: 0
+    folioCatastral: null
+    adeudo: 0
+    propietarioActual: null
+  - id: d9084ebe-ea30-45c8-bebe-d7e4402c64d0
+    valorCatastral: 2
+    folioCatastral: '2399'
+    adeudo: 2
+    propietarioActual: Didier Hobak

@@ -295,6 +295,9 @@ paths:
                 codigopostal: '9971235'
                 adeudo: 4
                 propietarioActual: Hennrry Chan
+          application/xml:
+            schema:
+              $ref: ./models/Crear-predial.yaml
       responses:
         '200':
           description: Successful response
@@ -311,6 +314,13 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      parameters:
+        - schema:
+            type: string
+            example: 95f532a5-cb66-bd1f-08d973a7334
+          in: query
+          name: id
+          description: id del predial
   /api/Catastral/GetCostos:
     get:
       tags:
@@ -322,6 +332,9 @@ paths:
           description: Successful response
           content:
             application/json: {}
+            application/xml:
+              schema:
+                $ref: ./models/lista-de-costos.yaml
   /api/Catastral/Costo:
     post:
       tags:
@@ -335,11 +348,28 @@ paths:
               type: object
               example:
                 id: ''
+          application/xml:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: id del predial
+            examples:
+              Example 1:
+                value: |-
+                  {
+                    "id": "d9084ebe-ea30-45c8-bebe-d7e4402c64d0"
+                          
+                  }
       responses:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: ./models/Costo.yaml
+      parameters: []
   /api/Auth/GetToken:
     post:
       tags:
@@ -354,8 +384,43 @@ paths:
               example:
                 UsuarioName: Luis
                 Contraseña: '1234'
+              properties:
+                UsuarioName:
+                  type: string
+                Contraseña:
+                  type: string
+            examples:
+              Example 1:
+                value:
+                  UsuarioName: Luis
+                  Contraseña: '1234'
       responses:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  result:
+                    type: string
+                x-examples:
+                  Example 1:
+                    success: true
+                    message: Exito
+                    result: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQyZGM2MTdiLWY1ODEtNDI3YS05M2FiLTg4MmYxM2U1ODM3ZiIsImlhdCI6IjExLzIzLzIwMjIgNTozMDo0MyBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjM0IiwiZXhwIjoxNzAwNzYwNjQzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjU5LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIn0.nf3fXx62MmrnjnH3BhSSeAgWzlr1Fr9qsupo-Z8GVCU
+              examples:
+                Example 1:
+                  value:
+                    success: true
+                    message: string
+                    result: string
+                Example 2:
+                  value:
+                    success: true
+                    message: Exito
+                    result: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQyZGM2MTdiLWY1ODEtNDI3YS05M2FiLTg4MmYxM2U1ODM3ZiIsImlhdCI6IjExLzIzLzIwMjIgNTozMDo0MyBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjM0IiwiZXhwIjoxNzAwNzYwNjQzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjU5LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIn0.nf3fXx62MmrnjnH3BhSSeAgWzlr1Fr9qsupo-Z8GVCU
