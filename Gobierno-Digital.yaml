@@ -343,9 +343,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                id: ''
+              $ref: ./models/lista-de-costos.yaml
           application/xml:
             schema:
               type: object
