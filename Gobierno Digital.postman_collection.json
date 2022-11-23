@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "1d906b50-655a-4b7b-ad0e-01202fb85d28",
+		"name": "Gobierno Digital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20302519"
+	},
+	"item": [
+		{
+			"name": "Lista de predial",
+			"item": [
+				{
+					"name": "Lista de predial por queryparams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/GetConQuery/?Folio=2",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"GetConQuery",
+								""
+							],
+							"query": [
+								{
+									"key": "Folio",
+									"value": "2"
+								}
+							]
+						},
+						"description": "recive los parametros que usa para filtrar por medio de queryparams\r\ny retorna una lista de predial con sus cabeceras"
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de predial por Body",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Folio\":\"\",\r\n    \"Clave\":\"\",\r\n    \"Propietario\":\"\",\r\n    \"Direcion\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/GetCatastral",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"GetCatastral"
+							]
+						},
+						"description": "es un metodo post que recive por el body los parametros de filtrado"
+					},
+					"response": []
+				},
+				{
+					"name": "Lista predial por pathparams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/GetConPath/2",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"GetConPath",
+								"2"
+							]
+						},
+						"description": "recive los parametros de filtrado apartir de pathparams\r\ny retorna una lista de predial con su cabezera"
+					},
+					"response": []
+				},
+				{
+					"name": "Lista predial con autentificación",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQ2NzAxNjBjLWY0NzgtNDk1Ny05ZTBmLTRkNTU4MTZjZTdmMiIsImlhdCI6IjExLzIzLzIwMjIgNDozMTowMSBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjMiLCJleHAiOjE3MDA3NTcwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI1OS8ifQ.cvD4VXi6WV2tNW5ZrnowpLIcTEO513aJhnPZ96nEaDY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/AuthCatsatral/GetAuntCatastral",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"AuthCatsatral",
+								"GetAuntCatastral"
+							]
+						},
+						"description": "listado de predial que valida que se envie un token valido por medio de los headers\r\nregresa lista de predial con sus cabeceras "
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notificaciones",
+			"item": [
+				{
+					"name": "Notificación de pago corto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 2,\r\n    \"folio\": \"\",\r\n    \"citizenMail\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Notificaciones/EgxINotificacion",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Notificaciones",
+								"EgxINotificacion"
+							]
+						},
+						"description": "recibe por el body el precio pagado, el folio y el correo del tramite y actualiza a pagado el predial"
+					},
+					"response": []
+				},
+				{
+					"name": "Notificación de pago largo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"selectedRecord\":{\r\n        \"id\":\"95f532a5-cb66-bd1f-08d973a7334\",\r\n        \"folio\": \"jugo11\",\r\n        \"nombre\": \"jugo\",\r\n        \"Precio\": 19\r\n    },\r\n    \"egxProcessInstance\":{\r\n        \"amount\": 22.0,\r\n        \"authorizationNumber\": \"801586\",\r\n        \"createdDate\": \"2021-06-09T15:33:40.8160973\",\r\n        \"expirationDate\": \"2022-06-09T15:33:40.8160973\",\r\n        \"folio\": \"4UEQFNUOFRQN\",\r\n        \"Id\": \"95f532a5-cb66-bd1f-08d973a7342\",\r\n        \"oderId\": \"95f532a5-cb66-bd1f-08d955a7334\",\r\n        \"paymentDate\":\"2021-06-09T15:33:40.8160973\",\r\n        \"PaymentMethod\": \"Card\",\r\n        \"ProcessInstanceId\": \"95f512a5-cb66-bd1f-08d973a7334\",\r\n        \"ProcessInstanceName\": \"Trámite con costo si resolucion\",\r\n        \"referenceFolio\": \"NFGAKFAUFNAL\",\r\n        \"transeactionId\": \"trzpuinzdzx47rmueeeg\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/notificaciones/Createnotificaion",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"notificaciones",
+								"Createnotificaion"
+							]
+						},
+						"description": "recive varios datos de entrada en el body egxProcessInstance y selectedRecord\r\nque cada uno trae sus propios datos "
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funciones de predial",
+			"item": [
+				{
+					"name": "Actualizar Predial",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valorCatastral\": 4,\r\n    \"folioCatastral\": \"2399\",\r\n    \"claveCatastral\": \"215-BFG\",\r\n    \"Calle\":\"52\",\r\n    \"letra\": \"B\",\r\n    \"numero\":\"252\",\r\n    \"cruzamientouno\": \"12\",\r\n    \"cruzamientodos\": \"425\",\r\n    \"direcion\": \"calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342\",\r\n    \"codigopostal\": \"9971235\",\r\n    \"adeudo\": 4,\r\n    \"propietarioActual\": \"Hennrry Chan\",\r\n    \"pagado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/UpdateCatastral",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"UpdateCatastral"
+							]
+						},
+						"description": "resvie por el body los datos que se van a actulizar todos opconales\r\ny por queryparams revise el id del predial a actualizar"
+					},
+					"response": []
+				},
+				{
+					"name": "Crea un predial nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valorCatastral\": 4,\r\n    \"folioCatastral\": \"2399\",\r\n    \"claveCatastral\": \"215-BFG\",\r\n    \"Calle\":\"52\",\r\n    \"letra\": \"B\",\r\n    \"numero\":\"252\",\r\n    \"cruzamientouno\": \"12\",\r\n    \"cruzamientodos\": \"425\",\r\n    \"direcion\": \"calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342\",\r\n    \"codigopostal\": \"9971235\",\r\n    \"adeudo\": 4,\r\n    \"propietarioActual\": \"Hennrry Chan\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/CreateCatastral",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"CreateCatastral"
+							]
+						},
+						"description": "Genera un predial nuevo \r\ny recive por el body los datos del predial"
+					},
+					"response": []
+				},
+				{
+					"name": "Elimina predial",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/DeleteCatastral",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"DeleteCatastral"
+							]
+						},
+						"description": "recive por queryparams el id del precial en formato guid"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Costos",
+			"item": [
+				{
+					"name": "Lista de todos los costos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/GetCostos",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"GetCostos"
+							]
+						},
+						"description": "Regresa una lista de costos mediante el predial"
+					},
+					"response": []
+				},
+				{
+					"name": "Costo de un predial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Catastral/Costo",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Catastral",
+								"Costo"
+							]
+						},
+						"description": "recive por el body el id en formato guid\r\ny en caso de no tener el id correcto regresa datos nulos"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Token de autentificación",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UsuarioName\": \"Luis\",\r\n    \"Contraseña\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://egx-vu-gobiernodigital.azurewebsites.net/api/Auth/GetToken",
+							"protocol": "https",
+							"host": [
+								"egx-vu-gobiernodigital",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"GetToken"
+							]
+						},
+						"description": "recive de parametros en el body UsuarioName y Contraseña\r\ny regresa un objeto con el token"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
