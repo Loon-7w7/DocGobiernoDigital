@@ -13,8 +13,6 @@ info:
 servers:
   - url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
     description: 'Live Server:'
-  - url: 'https://stoplight.io/mocks/bot-egob/Gobiernodigital/111370023'
-    description: 'Mock Server:'
 tags:
   - name: Lista de predial
   - name: Notificaciones
@@ -440,3 +438,5 @@ components:
     API Key - 1:
       type: http
       scheme: bearer
+x-internal: false
+x-Informacion Adicional: Hola mundo
