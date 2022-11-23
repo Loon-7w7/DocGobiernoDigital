@@ -28,28 +28,47 @@ paths:
           allowReserved: true
         - schema:
             type: string
+            example: 06-0098
           in: query
           name: Clave
           description: Opcional-Clave del predial
+          allowEmptyValue: true
         - schema:
             type: string
+            example: Hennrry Chan
           in: query
           name: Propietario
           description: Opcional-Propietario del predial
+          allowEmptyValue: true
         - schema:
             type: string
+            example: 'Calle 7 diag #90 entre 47 y 49, Colonia Santa María, Mérida'
           in: query
           name: Direccion
           description: Opcional-Direccion del predial
+          allowEmptyValue: true
       responses:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: ./models/Lista-predial.yaml
             application/xml:
               schema:
                 $ref: ./models/Lista-predial.yaml
               examples: {}
+            multipart/form-data:
+              schema:
+                $ref: ./models/Lista-predial.yaml
+            text/html:
+              schema:
+                $ref: ./models/Lista-predial.yaml
+              examples: {}
+            text/plain:
+              schema:
+                $ref: ./models/Lista-predial.yaml
+      x-internal: false
   /api/Catastral/GetCatastral:
     post:
       tags:
@@ -60,12 +79,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                Folio: ''
-                Clave: ''
-                Propietario: ''
-                Direcion: ''
+              $ref: ./models/Filtros-predial.yaml
+            examples:
+              Example 1:
+                value:
+                  Folio: '2399'
+                  Clave: ''
+                  Propietario: ''
+                  Direcion: ''
           application/xml:
             schema:
               type: object
@@ -73,15 +94,24 @@ paths:
           multipart/form-data:
             schema:
               $ref: ./models/Filtros-predial.yaml
+        description: ''
       responses:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: ./models/Lista-predial.yaml
             multipart/form-data:
               schema:
                 $ref: ./models/Lista-predial.yaml
-  /api/Catastral/GetConPath/2:
+            application/xml:
+              schema:
+                $ref: ./models/Lista-predial.yaml
+            text/html:
+              schema:
+                $ref: ./models/Lista-predial.yaml
+  '/api/Catastral/GetConPath/{Folio}/{Clave?}/{Propietario?}/{Direcion?}/':
     get:
       tags:
         - Lista de predial
@@ -92,6 +122,34 @@ paths:
           description: Successful response
           content:
             application/json: {}
+        '':
+          content:
+            application/json:
+              schema:
+                $ref: ./models/Lista-predial.yaml
+          description: ''
+      parameters: []
+    parameters:
+      - schema:
+          type: string
+        name: Folio
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: Clave?
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: Propietario?
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: Direcion?
+        in: path
+        required: true
   /api/AuthCatsatral/GetAuntCatastral:
     post:
       tags:
@@ -105,12 +163,16 @@ paths:
           in: header
           schema:
             type: string
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQyZGM2MTdiLWY1ODEtNDI3YS05M2FiLTg4MmYxM2U1ODM3ZiIsImlhdCI6IjExLzIzLzIwMjIgNTozMDo0MyBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjM0IiwiZXhwIjoxNzAwNzYwNjQzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjU5LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIn0.nf3fXx62MmrnjnH3BhSSeAgWzlr1Fr9qsupo-Z8GVCU
           example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQ2NzAxNjBjLWY0NzgtNDk1Ny05ZTBmLTRkNTU4MTZjZTdmMiIsImlhdCI6IjExLzIzLzIwMjIgNDozMTowMSBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjMiLCJleHAiOjE3MDA3NTcwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI1OS8ifQ.cvD4VXi6WV2tNW5ZrnowpLIcTEO513aJhnPZ96nEaDY
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+            application/xml:
+              schema:
+                $ref: ./models/Lista-predial.yaml
   /api/Notificaciones/EgxINotificacion:
     post:
       tags:
@@ -121,11 +183,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                amount: 2
-                folio: ''
-                citizenMail: ''
+              $ref: ./models/egxShot.yaml
       responses:
         '200':
           description: Successful response
