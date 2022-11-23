@@ -327,7 +327,9 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: ./models/lista-de-costos.yaml
             application/xml:
               schema:
                 $ref: ./models/lista-de-costos.yaml
