@@ -439,4 +439,4 @@ components:
       type: http
       scheme: bearer
 x-internal: false
-x-Informacion Adicional: Hola mundo
+x-Informacion Adicional: null
