@@ -190,26 +190,8 @@ paths:
           content:
             application/json: {}
   /api/notificaciones/Createnotificaion:
-    get:
-      tags:
-        - Notificaciones
-      summary: Notificación de pago largo
-      description: |-
-        recive varios datos de entrada en el body egxProcessInstance y selectedRecord
-        que cada uno trae sus propios datos 
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties: {}
     post:
-      summary: ''
+      summary: Notificación de pago largo
       operationId: post-api-notificaciones-Createnotificaion
       responses:
         '200':
@@ -222,6 +204,8 @@ paths:
       description: |-
         recive varios datos de entrada en el body egxProcessInstance y selectedRecord
         que cada uno trae sus propios datos 
+      tags:
+        - Notificaciones
   /api/Catastral/UpdateCatastral:
     put:
       tags:
