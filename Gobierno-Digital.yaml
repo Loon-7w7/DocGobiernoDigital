@@ -16,7 +16,9 @@ paths:
       tags:
         - Lista de predial
       summary: Lista de predial por queryparams
-      description: "recive los parametros que usa para filtrar por medio de queryparams\r\ny retorna una lista de predial con sus cabeceras"
+      description: |-
+        recibe los parametros que usa para filtrar por medio de queryparams
+        y retorna una lista de predial con sus cabeceras
       parameters:
         - name: Folio
           in: query
@@ -74,7 +76,7 @@ paths:
       tags:
         - Lista de predial
       summary: Lista de predial por Body
-      description: es un metodo post que recive por el body los parametros de filtrado
+      description: es un metodo post que recibe por el body los parametros de filtrado
       requestBody:
         content:
           application/json:
@@ -116,7 +118,9 @@ paths:
       tags:
         - Lista de predial
       summary: Lista predial por pathparams
-      description: "recive los parametros de filtrado apartir de pathparams\r\ny retorna una lista de predial con su cabezera"
+      description: |-
+        recibe los parametros de filtrado apartir de pathparams
+        y retorna una lista de predial con su cabezera
       responses:
         '200':
           description: Successful response
@@ -204,7 +208,7 @@ paths:
             schema:
               $ref: ./models/Notificaion-de-pago.yaml
       description: |-
-        recive varios datos de entrada en el body egxProcessInstance y selectedRecord
+        recibe varios datos de entrada en el body egxProcessInstance y selectedRecord
         que cada uno trae sus propios datos 
       tags:
         - Notificaciones
@@ -213,7 +217,9 @@ paths:
       tags:
         - Funciones de predial
       summary: Actualizar Predial
-      description: "resvie por el body los datos que se van a actulizar todos opconales\r\ny por queryparams revise el id del predial a actualizar"
+      description: |-
+        recibe por el body los datos que se van a actulizar todos opconales
+        y por queryparams revise el id del predial a actualizar
       requestBody:
         content:
           application/json:
@@ -262,7 +268,9 @@ paths:
       tags:
         - Funciones de predial
       summary: Crea un predial nuevo
-      description: "Genera un predial nuevo \r\ny recive por el body los datos del predial"
+      description: |-
+        Genera un predial nuevo 
+        y recibe por el body los datos del predial
       requestBody:
         content:
           application/json:
@@ -294,7 +302,7 @@ paths:
       tags:
         - Funciones de predial
       summary: Elimina predial
-      description: recive por queryparams el id del precial en formato guid
+      description: recibe por queryparams el id del precial en formato guid
       responses:
         '200':
           description: Successful response
@@ -326,7 +334,9 @@ paths:
       tags:
         - Costos
       summary: Costo de un predial
-      description: "recive por el body el id en formato guid\r\ny en caso de no tener el id correcto regresa datos nulos"
+      description: |-
+        recibe por el body el id en formato guid
+        y en caso de no tener el id correcto regresa datos nulos
       requestBody:
         content:
           application/json:
@@ -361,7 +371,9 @@ paths:
       tags:
         - Token
       summary: Token de autentificación
-      description: "recive de parametros en el body UsuarioName y Contraseña\r\ny regresa un objeto con el token"
+      description: |-
+        recibe de parametros en el body UsuarioName y Contraseña
+        y regresa un objeto con el token
       requestBody:
         content:
           application/json:
