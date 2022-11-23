@@ -20,3 +20,7 @@ examples:
       amount: 2
       folio: '231'
       citizenMail: Correo@correo.com
+  - egxProcessInstance:
+      amount: 0
+      folio: string
+      citizenMail: string

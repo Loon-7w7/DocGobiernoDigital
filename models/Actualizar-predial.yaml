@@ -1,0 +1,70 @@
+type: object
+properties:
+  valorCatastral:
+    type: integer
+  folioCatastral:
+    type: string
+  claveCatastral:
+    type: string
+  Calle:
+    type: string
+  letra:
+    type: string
+  numero:
+    type: string
+  cruzamientouno:
+    type: string
+  cruzamientodos:
+    type: string
+  direcion:
+    type: string
+  codigopostal:
+    type: string
+  adeudo:
+    type: integer
+  propietarioActual:
+    type: string
+  pagado:
+    type: boolean
+x-examples:
+  Example 1:
+    valorCatastral: 4
+    folioCatastral: '2399'
+    claveCatastral: 215-BFG
+    Calle: '52'
+    letra: B
+    numero: '252'
+    cruzamientouno: '12'
+    cruzamientodos: '425'
+    direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
+    codigopostal: '9971235'
+    adeudo: 4
+    propietarioActual: Hennrry Chan
+    pagado: true
+examples:
+  - valorCatastral: 0
+    folioCatastral: string
+    claveCatastral: string
+    Calle: string
+    letra: string
+    numero: string
+    cruzamientouno: string
+    cruzamientodos: string
+    direcion: string
+    codigopostal: string
+    adeudo: 0
+    propietarioActual: string
+    pagado: true
+  - valorCatastral: 4
+    folioCatastral: '2399'
+    claveCatastral: 215-BFG
+    Calle: '52'
+    letra: B
+    numero: '252'
+    cruzamientouno: '12'
+    cruzamientodos: '425'
+    direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
+    codigopostal: '9971235'
+    adeudo: 4
+    propietarioActual: Hennrry Chan
+    pagado: true

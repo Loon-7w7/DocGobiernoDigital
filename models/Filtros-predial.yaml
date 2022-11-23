@@ -15,3 +15,8 @@ x-examples:
     Propietario: ''
     Direcion: ''
 description: todos son opcionales
+examples:
+  - Folio: ''
+    Clave: ''
+    Propietario: ''
+    Direcion: ''

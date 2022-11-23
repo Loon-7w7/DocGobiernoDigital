@@ -194,12 +194,34 @@ paths:
       tags:
         - Notificaciones
       summary: Notificación de pago largo
-      description: "recive varios datos de entrada en el body egxProcessInstance y selectedRecord\r\nque cada uno trae sus propios datos "
+      description: |-
+        recive varios datos de entrada en el body egxProcessInstance y selectedRecord
+        que cada uno trae sus propios datos 
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+    post:
+      summary: ''
+      operationId: post-api-notificaciones-Createnotificaion
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/Notificaion-de-pago.yaml
+      description: |-
+        recive varios datos de entrada en el body egxProcessInstance y selectedRecord
+        que cada uno trae sus propios datos 
   /api/Catastral/UpdateCatastral:
     put:
       tags:
@@ -225,11 +247,30 @@ paths:
                 adeudo: 4
                 propietarioActual: Hennrry Chan
                 pagado: true
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+          text/html:
+            schema:
+              $ref: ./models/Actualizar-predial.yaml
+        description: ''
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+      parameters:
+        - schema:
+            type: string
+            example: 95f532a5-cb66-bd1f-08d973a7334
+          in: query
+          name: id
+          description: Id del predial
   /api/Catastral/CreateCatastral:
     post:
       tags:
