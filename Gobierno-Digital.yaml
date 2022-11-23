@@ -169,7 +169,9 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: ./models/Lista-predial.yaml
             application/xml:
               schema:
                 $ref: ./models/Lista-predial.yaml
