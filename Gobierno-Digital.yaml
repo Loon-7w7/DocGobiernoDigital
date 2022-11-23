@@ -1,0 +1,234 @@
+openapi: 3.0.0
+info:
+  title: Gobierno Digital
+  version: 1.0.0
+servers:
+  - url: https://egx-vu-gobiernodigital.azurewebsites.net
+tags:
+  - name: Lista de predial
+  - name: Notificaciones
+  - name: Funciones de predial
+  - name: Costos
+  - name: Token
+paths:
+  /api/Catastral/GetConQuery/:
+    get:
+      tags:
+        - Lista de predial
+      summary: Lista de predial por queryparams
+      description: "recive los parametros que usa para filtrar por medio de queryparams\r\ny retorna una lista de predial con sus cabeceras"
+      parameters:
+        - name: Folio
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/GetCatastral:
+    post:
+      tags:
+        - Lista de predial
+      summary: Lista de predial por Body
+      description: es un metodo post que recive por el body los parametros de filtrado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Folio: ''
+                Clave: ''
+                Propietario: ''
+                Direcion: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/GetConPath/2:
+    get:
+      tags:
+        - Lista de predial
+      summary: Lista predial por pathparams
+      description: "recive los parametros de filtrado apartir de pathparams\r\ny retorna una lista de predial con su cabezera"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/AuthCatsatral/GetAuntCatastral:
+    post:
+      tags:
+        - Lista de predial
+      summary: Lista predial con autentificación
+      description: "listado de predial que valida que se envie un token valido por medio de los headers\r\nregresa lista de predial con sus cabeceras "
+      requestBody:
+        content: {}
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQ2NzAxNjBjLWY0NzgtNDk1Ny05ZTBmLTRkNTU4MTZjZTdmMiIsImlhdCI6IjExLzIzLzIwMjIgNDozMTowMSBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjMiLCJleHAiOjE3MDA3NTcwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI1OS8ifQ.cvD4VXi6WV2tNW5ZrnowpLIcTEO513aJhnPZ96nEaDY
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Notificaciones/EgxINotificacion:
+    post:
+      tags:
+        - Notificaciones
+      summary: Notificación de pago corto
+      description: >-
+        recibe por el body el precio pagado, el folio y el correo del tramite y
+        actualiza a pagado el predial
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount: 2
+                folio: ''
+                citizenMail: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notificaciones/Createnotificaion:
+    get:
+      tags:
+        - Notificaciones
+      summary: Notificación de pago largo
+      description: "recive varios datos de entrada en el body egxProcessInstance y selectedRecord\r\nque cada uno trae sus propios datos "
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/UpdateCatastral:
+    put:
+      tags:
+        - Funciones de predial
+      summary: Actualizar Predial
+      description: "resvie por el body los datos que se van a actulizar todos opconales\r\ny por queryparams revise el id del predial a actualizar"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                valorCatastral: 4
+                folioCatastral: '2399'
+                claveCatastral: 215-BFG
+                Calle: '52'
+                letra: B
+                numero: '252'
+                cruzamientouno: '12'
+                cruzamientodos: '425'
+                direcion: calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342
+                codigopostal: '9971235'
+                adeudo: 4
+                propietarioActual: Hennrry Chan
+                pagado: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/CreateCatastral:
+    post:
+      tags:
+        - Funciones de predial
+      summary: Crea un predial nuevo
+      description: "Genera un predial nuevo \r\ny recive por el body los datos del predial"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                valorCatastral: 4
+                folioCatastral: '2399'
+                claveCatastral: 215-BFG
+                Calle: '52'
+                letra: B
+                numero: '252'
+                cruzamientouno: '12'
+                cruzamientodos: '425'
+                direcion: calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342
+                codigopostal: '9971235'
+                adeudo: 4
+                propietarioActual: Hennrry Chan
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/DeleteCatastral:
+    delete:
+      tags:
+        - Funciones de predial
+      summary: Elimina predial
+      description: recive por queryparams el id del precial en formato guid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/GetCostos:
+    get:
+      tags:
+        - Costos
+      summary: Lista de todos los costos
+      description: Regresa una lista de costos mediante el predial
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Catastral/Costo:
+    post:
+      tags:
+        - Costos
+      summary: Costo de un predial
+      description: "recive por el body el id en formato guid\r\ny en caso de no tener el id correcto regresa datos nulos"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/Auth/GetToken:
+    post:
+      tags:
+        - Token
+      summary: Token de autentificación
+      description: "recive de parametros en el body UsuarioName y Contraseña\r\ny regresa un objeto con el token"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                UsuarioName: Luis
+                Contraseña: '1234'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
