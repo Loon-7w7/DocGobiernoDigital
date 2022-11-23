@@ -2,8 +2,19 @@ openapi: 3.0.0
 info:
   title: Gobierno Digital
   version: 1.0.0
+  description: Gobierno digital es un servicio de ejemplo para los solicitantes del servicio Ventanilla Única
+  license:
+    url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
+  contact:
+    name: José Carrillo
+    email: jose.carrillo@blueoceantech.com.mx
+    url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
+  termsOfService: 'https://egx-vu-gobiernodigital.azurewebsites.net'
 servers:
   - url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
+    description: 'Live Server:'
+  - url: 'https://stoplight.io/mocks/bot-egob/Gobiernodigital/111370023'
+    description: 'Mock Server:'
 tags:
   - name: Lista de predial
   - name: Notificaciones
@@ -424,3 +435,8 @@ paths:
                     success: true
                     message: Exito
                     result: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQyZGM2MTdiLWY1ODEtNDI3YS05M2FiLTg4MmYxM2U1ODM3ZiIsImlhdCI6IjExLzIzLzIwMjIgNTozMDo0MyBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjM0IiwiZXhwIjoxNzAwNzYwNjQzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjU5LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIn0.nf3fXx62MmrnjnH3BhSSeAgWzlr1Fr9qsupo-Z8GVCU
+components:
+  securitySchemes:
+    API Key - 1:
+      type: http
+      scheme: bearer
