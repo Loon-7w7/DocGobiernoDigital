@@ -17,7 +17,7 @@ paths:
         - Lista de predial
       summary: Lista de predial por queryparams
       description: |-
-        recibe los parametros que usa para filtrar por medio de queryparams
+        Recibe los parámetros que usa para filtrar por medio de queryparams
         y retorna una lista de predial con sus cabeceras
       parameters:
         - name: Folio
@@ -76,7 +76,7 @@ paths:
       tags:
         - Lista de predial
       summary: Lista de predial por Body
-      description: es un metodo post que recibe por el body los parametros de filtrado
+      description: Es un método post que recibe por el body los parámetros de filtrado
       requestBody:
         content:
           application/json:
@@ -119,8 +119,8 @@ paths:
         - Lista de predial
       summary: Lista predial por pathparams
       description: |-
-        recibe los parametros de filtrado apartir de pathparams
-        y retorna una lista de predial con su cabezera
+        Recibe los parámetros de filtrado a partir de pathparams
+        y retorna una lista de predial con su cabecera
       responses:
         '200':
           description: Successful response
@@ -159,7 +159,9 @@ paths:
       tags:
         - Lista de predial
       summary: Lista predial con autentificación
-      description: "listado de predial que valida que se envie un token valido por medio de los headers\r\nregresa lista de predial con sus cabeceras "
+      description: |-
+        Listado de predial que válida que se envié un token válido por medio de los headers
+        regresa lista de predial con sus cabeceras
       requestBody:
         content: {}
       parameters:
@@ -184,7 +186,7 @@ paths:
       tags:
         - Notificaciones
       summary: Notificación de pago corto
-      description: 'recibe por el body el precio pagado, el folio y el correo del tramite y actualiza a pagado el predial'
+      description: 'Recibe por el body el precio pagado, el folio y el correo del trámite y actualiza ha pagado el predial'
       requestBody:
         content:
           application/json:
@@ -208,8 +210,8 @@ paths:
             schema:
               $ref: ./models/Notificaion-de-pago.yaml
       description: |-
-        recibe varios datos de entrada en el body egxProcessInstance y selectedRecord
-        que cada uno trae sus propios datos 
+        Recibe varios datos de entrada en el body egxProcessInstance y selectedRecord
+        que cada uno trae sus propios datos
       tags:
         - Notificaciones
   /api/Catastral/UpdateCatastral:
@@ -218,7 +220,7 @@ paths:
         - Funciones de predial
       summary: Actualizar Predial
       description: |-
-        recibe por el body los datos que se van a actulizar todos opconales
+        Recibe por el body los datos que se van a actualizar todos opcionales
         y por queryparams revise el id del predial a actualizar
       requestBody:
         content:
@@ -302,7 +304,7 @@ paths:
       tags:
         - Funciones de predial
       summary: Elimina predial
-      description: recibe por queryparams el id del precial en formato guid
+      description: Recibe por queryparams el id del predial en formato guid
       responses:
         '200':
           description: Successful response
@@ -335,8 +337,8 @@ paths:
         - Costos
       summary: Costo de un predial
       description: |-
-        recibe por el body el id en formato guid
-        y en caso de no tener el id correcto regresa datos nulos
+        Recibe por el body el id en formato guid
+        y en caso de no tener id correcto regresará datos nulos
       requestBody:
         content:
           application/json:
@@ -372,7 +374,7 @@ paths:
         - Token
       summary: Token de autentificación
       description: |-
-        recibe de parametros en el body UsuarioName y Contraseña
+        Recibe de parámetros en el body UsuarioName y Contraseña
         y regresa un objeto con el token
       requestBody:
         content:
