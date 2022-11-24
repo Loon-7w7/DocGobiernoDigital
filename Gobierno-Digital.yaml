@@ -5,6 +5,7 @@ info:
   description: Gobierno digital es un servicio de ejemplo para los solicitantes del servicio Ventanilla Única
   license:
     url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
+    name: Egob
   contact:
     email: app.dev@blueoceantech.com.mx
     name: BlueOcean
@@ -122,7 +123,7 @@ paths:
             text/html:
               schema:
                 $ref: ./models/Lista-predial.yaml
-  '/api/Catastral/GetConPath/{Folio}/{Clave?}/{Propietario?}/{Direcion?}/':
+  '/api/Catastral/GetConPath/{Folio}/{Clave}/{Propietario}/{Direccion}/':
     get:
       tags:
         - Lista de predial
@@ -150,17 +151,17 @@ paths:
         required: true
       - schema:
           type: string
-        name: Clave?
+        name: Clave
         in: path
         required: true
       - schema:
           type: string
-        name: Propietario?
+        name: Propietario
         in: path
         required: true
       - schema:
           type: string
-        name: Direcion?
+        name: Direccion
         in: path
         required: true
   /api/AuthCatsatral/GetAuntCatastral:
@@ -354,7 +355,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/lista-de-costos.yaml
+              type: object
+              properties:
+                id:
+                  type: string
           application/xml:
             schema:
               type: object
