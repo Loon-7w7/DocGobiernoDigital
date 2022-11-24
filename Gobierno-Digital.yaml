@@ -61,7 +61,7 @@ paths:
           allowEmptyValue: true
       responses:
         '200':
-          description: OK
+          description: Successful response
           content:
             application/json:
               schema:
@@ -88,15 +88,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
-            multipart/form-data:
-              schema:
-                $ref: ./models/Lista-predial.yaml
-            application/xml:
-              schema:
-                $ref: ./models/Lista-predial.yaml
-            text/html:
-              schema:
-                $ref: ./models/Lista-predial.yaml
   '/api/Catastral/GetConPath/{Folio}/{Clave}/{Propietario}/{Direccion}/':
     get:
       tags:
@@ -112,6 +103,7 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
+              examples: {}
       parameters: []
     parameters:
       - schema:
@@ -119,21 +111,25 @@ paths:
         name: Folio
         in: path
         required: true
+        description: Folio del predial
       - schema:
           type: string
         name: Clave
         in: path
         required: true
+        description: Clave del predial
       - schema:
           type: string
         name: Propietario
         in: path
         required: true
+        description: Propietario del predial
       - schema:
           type: string
         name: Direccion
         in: path
         required: true
+        description: Dirección del propietario
   /api/AuthCatsatral/GetAuntCatastral:
     post:
       tags:
@@ -310,9 +306,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/lista-de-costos.yaml
-            application/xml:
-              schema:
-                $ref: ./models/lista-de-costos.yaml
   /api/Catastral/Costo:
     post:
       tags:
@@ -340,20 +333,6 @@ paths:
               Example 2:
                 value:
                   id: 54EE0CF7-E367-408E-AE68-402173547A6F
-          application/xml:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: id del predial
-            examples:
-              Example 1:
-                value: |-
-                  {
-                    "id": "d9084ebe-ea30-45c8-bebe-d7e4402c64d0"
-                          
-                  }
         description: id en formato guid del predial
       responses:
         '200':
@@ -362,8 +341,17 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Costo.yaml
-              examples: {}
+              examples:
+                Example 3:
+                  value:
+                    id: d9084ebe-ea30-45c8-bebe-d7e4402c64d0
+                    valorCatastral: 2
+                    folioCatastral: '2399'
+                    adeudo: 2
+                    propietarioActual: Didier Hobak
       parameters: []
+      operationId: ''
+    parameters: []
   /api/Auth/GetToken:
     post:
       tags:

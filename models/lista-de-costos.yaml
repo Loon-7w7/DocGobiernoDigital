@@ -67,3 +67,4 @@ examples:
       folioCatastral: string
       adeudo: 0
       propietarioActual: string
+description: Lista de costos
