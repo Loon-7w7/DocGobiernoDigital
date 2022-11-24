@@ -133,15 +133,11 @@ paths:
         y retorna una lista de predial con su cabecera
       responses:
         '200':
-          description: Successful response
-          content:
-            application/json: {}
-        '':
+          description: OK
           content:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
-          description: ''
       parameters: []
     parameters:
       - schema:
@@ -356,9 +352,13 @@ paths:
           application/json:
             schema:
               type: object
+              x-examples:
+                Example 1:
+                  id: 54EE0CF7-E367-408E-AE68-402173547A6F
               properties:
                 id:
                   type: string
+                  description: id en formato guid del predial
             examples:
               Example 1:
                 value:
@@ -380,6 +380,7 @@ paths:
                     "id": "d9084ebe-ea30-45c8-bebe-d7e4402c64d0"
                           
                   }
+        description: id en formato guid del predial
       responses:
         '200':
           description: Successful response
@@ -387,14 +388,7 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Costo.yaml
-              examples:
-                Example 1:
-                  value:
-                    id: string
-                    valorCatastral: 0
-                    folioCatastral: string
-                    adeudo: 0
-                    propietarioActual: string
+              examples: {}
       parameters: []
   /api/Auth/GetToken:
     post:
