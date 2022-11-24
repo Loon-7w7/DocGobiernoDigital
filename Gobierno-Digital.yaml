@@ -66,13 +66,12 @@ paths:
           allowEmptyValue: true
       responses:
         '200':
-          description: Successful response
+          description: OK
           content:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
               examples: {}
-              
       x-internal: false
       operationId: 54EE0CF7-E367-408E-AE68-402173547A6F
   /api/Catastral/GetCatastral:
@@ -85,7 +84,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/Filtros-predial.yaml
+              $ref: ./models/Lista-predial.yaml
             examples: {}
         description: Filtros de la busqueda
       responses:
@@ -178,9 +177,7 @@ paths:
               $ref: ./models/egxShot.yaml
       responses:
         '200':
-          description: Successful response
-          content:
-            application/json: {}
+          description: OK
       operationId: B4C8B9B4-64DD-40FC-9E0E-79321DF1B982
   /api/notificaciones/Createnotificaion:
     post:
@@ -230,42 +227,9 @@ paths:
       description: |-
         Recibe por el body los datos que se van a actualizar todos opcionales
         y por queryparams revise el id del predial a actualizar
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                valorCatastral: 4
-                folioCatastral: '2399'
-                claveCatastral: 215-BFG
-                Calle: '52'
-                letra: B
-                numero: '252'
-                cruzamientouno: '12'
-                cruzamientodos: '425'
-                direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
-                codigopostal: '9971235'
-                adeudo: 4
-                propietarioActual: Hennrry Chan
-                pagado: true
-          application/xml:
-            schema:
-              type: object
-              properties: {}
-          multipart/form-data:
-            schema:
-              type: object
-              properties: {}
-          text/html:
-            schema:
-              $ref: ./models/Actualizar-predial.yaml
-        description: ''
       responses:
         '200':
-          description: Successful response
-          content:
-            application/json: {}
+          description: OK
       parameters:
         - schema:
             type: string
@@ -274,6 +238,11 @@ paths:
           name: id
           description: Id del predial
       operationId: 173A5D41-E393-402A-9AE4-E1858F468D22
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/Actualizar-predial.yaml
   /api/Catastral/CreateCatastral:
     post:
       tags:
@@ -286,28 +255,13 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                valorCatastral: 4
-                folioCatastral: '2399'
-                claveCatastral: 215-BFG
-                Calle: '52'
-                letra: B
-                numero: '252'
-                cruzamientouno: '12'
-                cruzamientodos: '425'
-                direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
-                codigopostal: '9971235'
-                adeudo: 4
-                propietarioActual: Hennrry Chan
+              $ref: ./models/Crear-predial.yaml
           application/xml:
             schema:
               $ref: ./models/Crear-predial.yaml
       responses:
         '200':
-          description: Successful response
-          content:
-            application/json: {}
+          description: OK
       operationId: 08D9871F-2C92-43C9-A7AB-8AB69E498AA1
   /api/Catastral/DeleteCatastral:
     delete:
@@ -317,9 +271,7 @@ paths:
       description: Recibe por queryparams el id del predial en formato guid
       responses:
         '200':
-          description: Successful response
-          content:
-            application/json: {}
+          description: OK
       parameters:
         - schema:
             type: string

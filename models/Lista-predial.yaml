@@ -133,7 +133,7 @@ properties:
         id:
           type: string
         valorCatastral:
-          type: string
+          type: number
         folioCatastral:
           type: string
         claveCatastral:
