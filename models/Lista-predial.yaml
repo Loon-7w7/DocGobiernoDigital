@@ -148,3 +148,5 @@ properties:
         pagado:
           type: boolean
 x-internal: true
+x-tags:
+  - Response

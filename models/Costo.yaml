@@ -3,9 +3,9 @@ x-examples:
   Example 1:
     id: 00000000-0000-0000-0000-000000000000
     valorCatastral: 0
-    folioCatastral: "null"
+    folioCatastral: 'null'
     adeudo: 0
-    propietarioActual: "null"
+    propietarioActual: 'null'
 examples:
   - id: d9084ebe-ea30-45c8-bebe-d7e4402c64d0
     valorCatastral: 2
@@ -24,3 +24,5 @@ properties:
   propietarioActual:
     type: string
 description: Datos de un costo
+x-tags:
+  - Response
