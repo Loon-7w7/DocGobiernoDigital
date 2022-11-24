@@ -6,10 +6,9 @@ info:
   license:
     url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
   contact:
-    name: José Carrillo
-    email: jose.carrillo@blueoceantech.com.mx
-    url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
-  termsOfService: 'https://egx-vu-gobiernodigital.azurewebsites.net'
+    email: app.dev@blueoceantech.com.mx
+    name: BlueOcean
+  termsOfService: 'https://egob.com/'
 servers:
   - url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
     description: 'Live Server:'
