@@ -16,10 +16,15 @@ servers:
     description: 'Live Server:'
 tags:
   - name: Lista de predial
+    description: endpoint para lista de predial
   - name: Notificaciones
+    description: endpoint de notificaion de pagos
   - name: Funciones de predial
+    description: endpoint funciones de pago
   - name: Costos
+    description: endpoint relacionado con constos
   - name: Token
+    description: endpoint relacionados con tokens
 paths:
   /api/Catastral/GetConQuery:
     get:
