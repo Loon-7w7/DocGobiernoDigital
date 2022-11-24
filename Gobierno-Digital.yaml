@@ -243,6 +243,7 @@ paths:
           application/json:
             schema:
               $ref: ./models/Actualizar-predial.yaml
+        description: ''
   /api/Catastral/CreateCatastral:
     post:
       tags:
@@ -398,4 +399,5 @@ components:
     API Key - 1:
       type: http
       scheme: bearer
+  requestBodies: {}
 x-internal: false
