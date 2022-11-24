@@ -8,7 +8,8 @@ info:
   contact:
     email: app.dev@blueoceantech.com.mx
     name: BlueOcean
-  termsOfService: 'https://egob.com/'
+    url: 'https://egob.com/'
+  termsOfService: 'https://egob.com/terminos-y-condiciones/'
 servers:
   - url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
     description: 'Live Server:'
