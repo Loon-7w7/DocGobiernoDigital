@@ -65,3 +65,5 @@ examples:
     codigopostal: '9971235'
     adeudo: 4
     propietarioActual: Hennrry Chan
+x-tags:
+  - Request

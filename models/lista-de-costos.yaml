@@ -73,3 +73,5 @@ items:
     propietarioActual:
       type: string
       description: Nombre del propitario
+x-tags:
+  - Response

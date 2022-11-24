@@ -24,3 +24,5 @@ examples:
       amount: 0
       folio: string
       citizenMail: string
+x-tags:
+  - Request

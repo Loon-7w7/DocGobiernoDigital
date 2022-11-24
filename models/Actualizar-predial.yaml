@@ -68,3 +68,6 @@ examples:
     adeudo: 4
     propietarioActual: Hennrry Chan
     pagado: true
+description: DAtos de actualizacion
+x-tags:
+  - Request

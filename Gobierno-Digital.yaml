@@ -72,6 +72,7 @@ paths:
               schema:
                 $ref: ./models/Lista-predial.yaml
               examples: {}
+              
       x-internal: false
       operationId: 54EE0CF7-E367-408E-AE68-402173547A6F
   /api/Catastral/GetCatastral:
@@ -193,6 +194,29 @@ paths:
           application/json:
             schema:
               $ref: ./models/Notificaion-de-pago.yaml
+            examples:
+              Example 1:
+                value:
+                  selectedRecord:
+                    id: 95f532a5-cb66-bd1f-08d973a7334
+                    folio: jugo11
+                    nombre: jugo
+                    Precio: 19
+                  egxProcessInstance:
+                    amount: 22
+                    authorizationNumber: '801586'
+                    createdDate: '2021-06-09T15:33:40.8160973'
+                    expirationDate: '2022-06-09T15:33:40.8160973'
+                    folio: 4UEQFNUOFRQN
+                    Id: 95f532a5-cb66-bd1f-08d973a7342
+                    oderId: 95f532a5-cb66-bd1f-08d955a7334
+                    paymentDate: '2021-06-09T15:33:40.8160973'
+                    PaymentMethod: Card
+                    ProcessInstanceId: 95f512a5-cb66-bd1f-08d973a7334
+                    ProcessInstanceName: Trámite con costo si resolucion
+                    referenceFolio: NFGAKFAUFNAL
+                    transeactionId: trzpuinzdzx47rmueeeg
+        description: datos de la petición
       description: |-
         Recibe varios datos de entrada en el body egxProcessInstance y selectedRecord
         que cada uno trae sus propios datos
@@ -353,14 +377,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Costo.yaml
-              examples:
-                Example 3:
-                  value:
-                    id: d9084ebe-ea30-45c8-bebe-d7e4402c64d0
-                    valorCatastral: 2
-                    folioCatastral: '2399'
-                    adeudo: 2
-                    propietarioActual: Didier Hobak
       parameters: []
       operationId: C375F83E-F23C-45B1-AAF2-2BD658DB251A
     parameters: []

@@ -95,7 +95,7 @@ examples:
       pagado: string
     catastrals:
       - id: string
-        valorCatastral: 0
+        valorCatastral: string
         folioCatastral: string
         claveCatastral: string
         direcion: string
@@ -142,9 +142,9 @@ properties:
           type: string
         adeudo:
           type:
-            - integer
             - number
         propietarioActual:
           type: string
         pagado:
           type: boolean
+x-internal: true

@@ -16,11 +16,9 @@ x-examples:
     Direcion: ''
 description: todos son opcionales
 examples:
-  - Folio: ''
-    Clave: ''
-    Propietario: ''
-    Direcion: ''
   - Folio: '1235'
     Clave: HFGS-152
     Propietario: Jose Lara
     Direcion: 'Calle 215 #154'
+x-tags:
+  - Request
