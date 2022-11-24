@@ -61,25 +61,12 @@ paths:
           allowEmptyValue: true
       responses:
         '200':
-          description: Successful response
+          description: OK
           content:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
-            application/xml:
-              schema:
-                $ref: ./models/Lista-predial.yaml
               examples: {}
-            multipart/form-data:
-              schema:
-                $ref: ./models/Lista-predial.yaml
-            text/html:
-              schema:
-                $ref: ./models/Lista-predial.yaml
-              examples: {}
-            text/plain:
-              schema:
-                $ref: ./models/Lista-predial.yaml
       x-internal: false
   /api/Catastral/GetCatastral:
     post:
@@ -92,21 +79,8 @@ paths:
           application/json:
             schema:
               $ref: ./models/Filtros-predial.yaml
-            examples:
-              Example 1:
-                value:
-                  Folio: '2399'
-                  Clave: ''
-                  Propietario: ''
-                  Direcion: ''
-          application/xml:
-            schema:
-              type: object
-              properties: {}
-          multipart/form-data:
-            schema:
-              $ref: ./models/Filtros-predial.yaml
-        description: ''
+            examples: {}
+        description: Filtros de la busqueda
       responses:
         '200':
           description: Successful response

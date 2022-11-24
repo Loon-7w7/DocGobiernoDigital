@@ -126,8 +126,25 @@ x-examples:
         adeudo: 101.1
         propietarioActual: asd
         pagado: true
-description: Headertable eson los nombre que se mostraran para los parametros de la lista de predial
 examples:
+  - headerTable:
+      id: string
+      valorCatastral: string
+      folioCatastral: string
+      claveCatastral: string
+      direcion: string
+      adeudo: string
+      propietarioActual: string
+      pagado: string
+    catastrals:
+      - id: string
+        valorCatastral: 0
+        folioCatastral: string
+        claveCatastral: string
+        direcion: string
+        adeudo: 0
+        propietarioActual: string
+        pagado: true
   - headerTable:
       id: Id
       valorCatastral: Valor Catastral
@@ -210,4 +227,3 @@ examples:
         adeudo: 101.1
         propietarioActual: asd
         pagado: true
-title: ''
