@@ -1,19 +1,4 @@
 type: array
-items:
-  type: object
-  properties:
-    id:
-      type: string
-    valorCatastral:
-      type: integer
-    folioCatastral:
-      type: string
-    adeudo:
-      type:
-        - integer
-        - number
-    propietarioActual:
-      type: string
 x-examples:
   Example 1:
     - id: 2a7613c6-dda0-4c08-b02e-185a3123b5b5
@@ -68,3 +53,23 @@ examples:
       adeudo: 0
       propietarioActual: string
 description: Lista de costos
+items:
+  type: object
+  properties:
+    id:
+      type: string
+      description: Id predial
+    valorCatastral:
+      type: integer
+      description: Valor del predial
+    folioCatastral:
+      type: string
+      description: Folio del predial
+    adeudo:
+      type:
+        - integer
+        - number
+      description: Aduedo del propitario
+    propietarioActual:
+      type: string
+      description: Nombre del propitario

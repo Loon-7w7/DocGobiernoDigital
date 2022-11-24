@@ -106,6 +106,7 @@ description: Lista de predial filtrado con su cabecera
 properties:
   headerTable:
     type: object
+    description: cabecera de la tabla
     properties:
       id:
         type: string
@@ -125,6 +126,7 @@ properties:
         type: string
   catastrals:
     type: array
+    description: lista de predial
     items:
       type: object
       properties:

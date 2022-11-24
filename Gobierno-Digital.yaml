@@ -21,7 +21,7 @@ tags:
   - name: Costos
   - name: Token
 paths:
-  /api/Catastral/GetConQuery/:
+  /api/Catastral/GetConQuery:
     get:
       tags:
         - Lista de predial
@@ -68,6 +68,7 @@ paths:
                 $ref: ./models/Lista-predial.yaml
               examples: {}
       x-internal: false
+      operationId: 54EE0CF7-E367-408E-AE68-402173547A6F
   /api/Catastral/GetCatastral:
     post:
       tags:
@@ -88,7 +89,8 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
-  '/api/Catastral/GetConPath/{Folio}/{Clave}/{Propietario}/{Direccion}/':
+      operationId: 6390D872-F6B4-4CFA-A582-324146CEEC68
+  '/api/Catastral/GetConPath/{Folio}/{Clave}/{Propietario}/{Direccion}':
     get:
       tags:
         - Lista de predial
@@ -105,6 +107,7 @@ paths:
                 $ref: ./models/Lista-predial.yaml
               examples: {}
       parameters: []
+      operationId: C76B5DDD-9173-40A4-B6A3-232ECF3F6417
     parameters:
       - schema:
           type: string
@@ -147,6 +150,7 @@ paths:
             type: string
             example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQyZGM2MTdiLWY1ODEtNDI3YS05M2FiLTg4MmYxM2U1ODM3ZiIsImlhdCI6IjExLzIzLzIwMjIgNTozMDo0MyBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjM0IiwiZXhwIjoxNzAwNzYwNjQzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjU5LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIn0.nf3fXx62MmrnjnH3BhSSeAgWzlr1Fr9qsupo-Z8GVCU
           example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQ2NzAxNjBjLWY0NzgtNDk1Ny05ZTBmLTRkNTU4MTZjZTdmMiIsImlhdCI6IjExLzIzLzIwMjIgNDozMTowMSBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjMiLCJleHAiOjE3MDA3NTcwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI1OS8ifQ.cvD4VXi6WV2tNW5ZrnowpLIcTEO513aJhnPZ96nEaDY
+          description: Token de autentificacion
       responses:
         '200':
           description: Successful response
@@ -154,9 +158,7 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
-            application/xml:
-              schema:
-                $ref: ./models/Lista-predial.yaml
+      operationId: 8C7765AC-0726-4281-9AD9-CFBDEE9F91FD
   /api/Notificaciones/EgxINotificacion:
     post:
       tags:
@@ -173,10 +175,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: B4C8B9B4-64DD-40FC-9E0E-79321DF1B982
   /api/notificaciones/Createnotificaion:
     post:
       summary: Notificación de pago largo
-      operationId: post-api-notificaciones-Createnotificaion
+      operationId: 325E80B2-FB1A-4824-968B-1A8909309402
       responses:
         '200':
           description: OK
@@ -241,6 +244,7 @@ paths:
           in: query
           name: id
           description: Id del predial
+      operationId: 173A5D41-E393-402A-9AE4-E1858F468D22
   /api/Catastral/CreateCatastral:
     post:
       tags:
@@ -275,6 +279,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: 08D9871F-2C92-43C9-A7AB-8AB69E498AA1
   /api/Catastral/DeleteCatastral:
     delete:
       tags:
@@ -293,6 +298,7 @@ paths:
           in: query
           name: id
           description: id del predial
+      operationId: 9330C8DF-A595-4E20-AB90-AEDE59F9D467
   /api/Catastral/GetCostos:
     get:
       tags:
@@ -306,6 +312,7 @@ paths:
             application/json:
               schema:
                 $ref: ./models/lista-de-costos.yaml
+      operationId: CD32D642-F9DE-4531-A108-445A5081B76B
   /api/Catastral/Costo:
     post:
       tags:
@@ -350,7 +357,7 @@ paths:
                     adeudo: 2
                     propietarioActual: Didier Hobak
       parameters: []
-      operationId: ''
+      operationId: C375F83E-F23C-45B1-AAF2-2BD658DB251A
     parameters: []
   /api/Auth/GetToken:
     post:
@@ -371,13 +378,16 @@ paths:
               properties:
                 UsuarioName:
                   type: string
+                  description: Nombre de usuario
                 Contraseña:
                   type: string
+                  description: Conntraseña
             examples:
               Example 1:
                 value:
                   UsuarioName: Luis
                   Contraseña: '1234'
+        description: DAtosa para crear el token
       responses:
         '200':
           description: Successful response
@@ -408,6 +418,8 @@ paths:
                     success: true
                     message: Exito
                     result: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6ImQyZGM2MTdiLWY1ODEtNDI3YS05M2FiLTg4MmYxM2U1ODM3ZiIsImlhdCI6IjExLzIzLzIwMjIgNTozMDo0MyBQTSIsInVzdWFyaW8iOiJMdWlzIiwiQ29udHJhc2XDsWEiOiIxMjM0IiwiZXhwIjoxNzAwNzYwNjQzLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjU5LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNTkvIn0.nf3fXx62MmrnjnH3BhSSeAgWzlr1Fr9qsupo-Z8GVCU
+      operationId: 50F55859-0555-4E16-9B53-87CF1ECBFDCC
+      x-internal: false
 components:
   securitySchemes:
     API Key - 1:
