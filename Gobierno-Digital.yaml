@@ -361,7 +361,7 @@ paths:
                 value:
                   UsuarioName: Luis
                   Contraseña: '1234'
-        description: DAtosa para crear el token
+        description: Datosa para crear el token
       responses:
         '200':
           description: Successful response
