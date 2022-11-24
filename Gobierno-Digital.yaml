@@ -359,6 +359,13 @@ paths:
               properties:
                 id:
                   type: string
+            examples:
+              Example 1:
+                value:
+                  id: string
+              Example 2:
+                value:
+                  id: 54EE0CF7-E367-408E-AE68-402173547A6F
           application/xml:
             schema:
               type: object
@@ -380,6 +387,14 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Costo.yaml
+              examples:
+                Example 1:
+                  value:
+                    id: string
+                    valorCatastral: 0
+                    folioCatastral: string
+                    adeudo: 0
+                    propietarioActual: string
       parameters: []
   /api/Auth/GetToken:
     post:
