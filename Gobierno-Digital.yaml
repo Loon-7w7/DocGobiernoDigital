@@ -84,7 +84,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/Lista-predial.yaml
+              $ref: ./models/Filtros-predial.yaml
         description: Filtros de la busqueda
       responses:
         '200':
