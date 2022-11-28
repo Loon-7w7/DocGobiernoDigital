@@ -22,7 +22,7 @@ tags:
   - name: Funciones de predial
     description: endpoint funciones de pago
   - name: Costos
-    description: endpoint relacionado con constos
+    description: endpoint relacionado con costos
   - name: Token
     description: endpoint relacionados con tokens
 paths:
@@ -85,7 +85,6 @@ paths:
           application/json:
             schema:
               $ref: ./models/Lista-predial.yaml
-            examples: {}
         description: Filtros de la busqueda
       responses:
         '200':
