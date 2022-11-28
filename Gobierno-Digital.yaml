@@ -71,7 +71,6 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Lista-predial.yaml
-              examples: {}
       x-internal: false
       operationId: 54EE0CF7-E367-408E-AE68-402173547A6F
   /api/Catastral/GetCatastral:
