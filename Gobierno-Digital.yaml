@@ -35,14 +35,6 @@ paths:
         Recibe los parámetros que usa para filtrar por medio de queryparams
         y retorna una lista de predial con sus cabeceras
       parameters:
-        - name: Folio
-          in: query
-          schema:
-            type: string
-            example: '23665'
-          example: '2'
-          description: Opcional-Folio del predial
-          allowReserved: true
         - schema:
             type: string
             example: 06-0098
@@ -62,8 +54,13 @@ paths:
             example: 'Calle 7 diag #90 entre 47 y 49, Colonia Santa María, Mérida'
           in: query
           name: Direccion
-          description: Opcional-Direccion del predial
+          description: Opcional-Dirección del predial
           allowEmptyValue: true
+        - schema:
+            type: string
+          in: query
+          name: Folio
+          description: Opcional-Folio del predial
       responses:
         '200':
           description: OK
