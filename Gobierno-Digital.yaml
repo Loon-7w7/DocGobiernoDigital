@@ -58,6 +58,7 @@ paths:
           allowEmptyValue: true
         - schema:
             type: string
+            example: FHJ-215
           in: query
           name: Folio
           description: Opcional-Folio del predial
