@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Gobierno Digital
-  version: 1.0.0
+  version: 1.1.1
   description: Gobierno digital es un servicio de ejemplo para los solicitantes del servicio Ventanilla Única
   license:
     url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
@@ -13,7 +13,7 @@ info:
   termsOfService: 'https://egob.com/terminos-y-condiciones/'
 servers:
   - url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
-    description: 'Live Server:'
+    description: Live Server
 tags:
   - name: Lista de predial
     description: endpoint para lista de predial
