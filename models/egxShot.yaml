@@ -12,17 +12,6 @@ properties:
 x-examples:
   Example 1:
     egxProcessInstance:
-      amount: 2
-      folio: '122'
-      citizenMail: Correo@correo.com
-examples:
-  - egxProcessInstance:
-      amount: 2
-      folio: '231'
-      citizenMail: Correo@correo.com
-  - egxProcessInstance:
       amount: 0
       folio: string
       citizenMail: string
-x-tags:
-  - Request

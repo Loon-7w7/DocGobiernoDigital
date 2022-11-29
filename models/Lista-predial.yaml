@@ -1,112 +1,7 @@
 type: object
-x-examples:
-  Example 1:
-    headerTable:
-      id: Id
-      valorCatastral: Valor Catastral
-      folioCatastral: Folio
-      claveCatastral: Clave
-      direcion: Direccón
-      adeudo: Adeudo
-      propietarioActual: Propietario Actual
-      pagado: Pagado
-    catastrals:
-      - id: 2a7613c6-dda0-4c08-b02e-185a3123b5b5
-        valorCatastral: 4
-        folioCatastral: '2399'
-        claveCatastral: 215-BFG
-        direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
-        adeudo: 4
-        propietarioActual: Hennrry Chan
-        pagado: true
-      - id: 4f4f1def-afbe-4532-9164-2f0728a386f0
-        valorCatastral: 3
-        folioCatastral: '2399'
-        claveCatastral: 112-FDA
-        direcion: 'calle 56,F numero 54 x 24 y 34 colonia México, 92424'
-        adeudo: 3
-        propietarioActual: Mario Mena
-        pagado: false
-      - id: 8f90e5e0-217e-43af-8f35-cd1d7328bd53
-        valorCatastral: 2875498
-        folioCatastral: '2399'
-        claveCatastral: 89-0865
-        direcion: 'Calle 45 #20 entre 4 y 6, Colonia Pacabtún, Mérida. 97155'
-        adeudo: 2700
-        propietarioActual: da
-        pagado: true
-      - id: 98ac148c-1a3a-4364-ab02-f1d846f7b7c2
-        valorCatastral: 20
-        folioCatastral: '23556'
-        claveCatastral: '2333'
-        direcion: 'calle ds,s numero 33 x s y s colonia Mérida, 973000'
-        adeudo: 100
-        propietarioActual: fer
-        pagado: false
-      - id: d10d7a56-abbb-4363-bba6-f6c23a92874e
-        valorCatastral: 2
-        folioCatastral: '2399'
-        claveCatastral: 152-DFW
-        direcion: 'calle 53,B numero 54 x 53 y 23 colonia tinajas, 991752'
-        adeudo: 1
-        propietarioActual: Jesús Pérez
-        pagado: false
-      - id: d167dfec-0dcb-422b-b06d-24ad9523a41e
-        valorCatastral: 4
-        folioCatastral: '2399'
-        claveCatastral: 215-BFG
-        direcion: 'calle 34,H numero 45 x 34 y 56 colonia San Crestal, 94342'
-        adeudo: 4
-        propietarioActual: Hennrry Chan
-        pagado: false
-      - id: d3c3df65-79f2-41d0-865a-40f7f14d5d25
-        valorCatastral: 584265.87
-        folioCatastral: '19478'
-        claveCatastral: 06-0098
-        direcion: 'Calle 7 diag #90 entre 47 y 49, Colonia Santa María, Mérida. 97138'
-        adeudo: 900
-        propietarioActual: asd
-        pagado: true
-      - id: d9084ebe-ea30-45c8-bebe-d7e4402c64d0
-        valorCatastral: 2
-        folioCatastral: '2399'
-        claveCatastral: 1253-FWE
-        direcion: 'calle 54,B numero 53 x 25 y 65 colonia San Juan, 92112'
-        adeudo: 2
-        propietarioActual: Didier Hobak
-        pagado: false
-      - id: e302622c-b4c6-4b93-b58e-5358d6f9391d
-        valorCatastral: 1123250
-        folioCatastral: '20785'
-        claveCatastral: 83-0005
-        direcion: 'Calle 24 - A #40 - A entre 16 y 18, Colonia San Marcos, Mérida. 97290'
-        adeudo: 101.1
-        propietarioActual: asd
-        pagado: true
-examples:
-  - headerTable:
-      id: string
-      valorCatastral: string
-      folioCatastral: string
-      claveCatastral: string
-      direcion: string
-      adeudo: string
-      propietarioActual: string
-      pagado: string
-    catastrals:
-      - id: string
-        valorCatastral: string
-        folioCatastral: string
-        claveCatastral: string
-        direcion: string
-        adeudo: 0
-        propietarioActual: string
-        pagado: true
-description: Lista de predial filtrado con su cabecera
 properties:
   headerTable:
     type: object
-    description: cabecera de la tabla
     properties:
       id:
         type: string
@@ -126,14 +21,13 @@ properties:
         type: string
   catastrals:
     type: array
-    description: lista de predial
     items:
       type: object
       properties:
         id:
           type: string
         valorCatastral:
-          type: number
+          type: string
         folioCatastral:
           type: string
         claveCatastral:
@@ -141,12 +35,28 @@ properties:
         direcion:
           type: string
         adeudo:
-          type:
-            - number
+          type: integer
         propietarioActual:
           type: string
         pagado:
           type: boolean
-x-internal: true
-x-tags:
-  - Response
+x-examples:
+  Example 1:
+    headerTable:
+      id: string
+      valorCatastral: string
+      folioCatastral: string
+      claveCatastral: string
+      direcion: string
+      adeudo: string
+      propietarioActual: string
+      pagado: string
+    catastrals:
+      - id: string
+        valorCatastral: string
+        folioCatastral: string
+        claveCatastral: string
+        direcion: string
+        adeudo: 0
+        propietarioActual: string
+        pagado: true

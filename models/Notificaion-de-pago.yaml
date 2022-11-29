@@ -43,26 +43,6 @@ properties:
 x-examples:
   Example 1:
     selectedRecord:
-      id: 95f532a5-cb66-bd1f-08d973a7334
-      folio: jugo11
-      nombre: jugo
-      Precio: 19
-    egxProcessInstance:
-      amount: 22
-      authorizationNumber: '801586'
-      createdDate: '2021-06-09T15:33:40.8160973'
-      expirationDate: '2022-06-09T15:33:40.8160973'
-      folio: 4UEQFNUOFRQN
-      Id: 95f532a5-cb66-bd1f-08d973a7342
-      oderId: 95f532a5-cb66-bd1f-08d955a7334
-      paymentDate: '2021-06-09T15:33:40.8160973'
-      PaymentMethod: Card
-      ProcessInstanceId: 95f512a5-cb66-bd1f-08d973a7334
-      ProcessInstanceName: Trámite con costo si resolucion
-      referenceFolio: NFGAKFAUFNAL
-      transeactionId: trzpuinzdzx47rmueeeg
-examples:
-  - selectedRecord:
       id: string
       folio: string
       nombre: string
@@ -81,7 +61,3 @@ examples:
       ProcessInstanceName: string
       referenceFolio: string
       transeactionId: string
-description: ''
-x-tags:
-  - Request
-x-internal: true
