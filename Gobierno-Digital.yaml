@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Gobierno Digital
   version: 1.1.1
-  description: '![gobiernod.png](https://pbs.twimg.com/media/FSViqKFWYAALz83.jpg)'
+  description: '![gobiernod.png](https://egob.com/wp-content/themes/generatepress/templates/home/img/logo.svg)'
   license:
     url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
     name: Egob
