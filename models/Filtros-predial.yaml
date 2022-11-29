@@ -1,13 +1,4 @@
 type: object
-properties:
-  Folio:
-    type: string
-  Clave:
-    type: string
-  Propietario:
-    type: string
-  Direcion:
-    type: string
 x-examples:
   Example 1:
     Folio: '1235'
@@ -17,3 +8,12 @@ x-examples:
 description: Filtros de un predial
 x-tags:
   - Request
+properties:
+  Folio:
+    type: string
+  Clave:
+    type: string
+  Propietario:
+    type: string
+  Direcion:
+    type: string
