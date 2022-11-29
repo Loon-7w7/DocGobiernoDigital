@@ -114,25 +114,22 @@ paths:
           type: string
         name: Folio
         in: path
-        required: true
         description: Folio del predial
+        required: true
       - schema:
           type: string
         name: Clave
         in: path
-        required: true
         description: Clave del predial
       - schema:
           type: string
         name: Propietario
         in: path
-        required: true
         description: Propietario del predial
       - schema:
           type: string
         name: Direccion
         in: path
-        required: true
         description: Dirección del propietario
   /api/AuthCatsatral/GetAuntCatastral:
     post:
@@ -395,5 +392,6 @@ components:
     API Key - 1:
       type: http
       scheme: bearer
+      description: ''
   requestBodies: {}
 x-internal: false
