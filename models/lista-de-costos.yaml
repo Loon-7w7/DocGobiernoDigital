@@ -20,3 +20,5 @@ x-examples:
       adeudo: 0
       propietarioActual: string
 description: Lista de costos
+x-tags:
+  - Response

@@ -39,3 +39,5 @@ x-examples:
     adeudo: 0
     propietarioActual: string
 description: Datos para crear un predial
+x-tags:
+  - Request

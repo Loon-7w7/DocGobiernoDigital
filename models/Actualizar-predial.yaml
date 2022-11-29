@@ -42,3 +42,5 @@ x-examples:
     propietarioActual: string
     pagado: true
 description: Datos para Actualizar un predial
+x-tags:
+  - Request

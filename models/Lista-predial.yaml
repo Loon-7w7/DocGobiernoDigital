@@ -61,3 +61,5 @@ x-examples:
         propietarioActual: string
         pagado: true
 description: Lista de predial con sus cabeceras
+x-tags:
+  - Response

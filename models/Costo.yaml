@@ -18,3 +18,5 @@ x-examples:
     adeudo: 2
     propietarioActual: Didier Hobak
 description: Datos de un costo
+x-tags:
+  - Response

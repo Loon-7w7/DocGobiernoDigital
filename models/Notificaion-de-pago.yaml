@@ -62,3 +62,5 @@ x-examples:
       referenceFolio: string
       transeactionId: string
 description: Datos de una notificaion de pago largo
+x-tags:
+  - Request
