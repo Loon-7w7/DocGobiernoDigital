@@ -41,3 +41,4 @@ x-examples:
     adeudo: 0
     propietarioActual: string
     pagado: true
+description: Datos para Actualizar un predial

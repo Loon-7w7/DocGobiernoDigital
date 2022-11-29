@@ -60,3 +60,4 @@ x-examples:
         adeudo: 0
         propietarioActual: string
         pagado: true
+description: Lista de predial con sus cabeceras

@@ -38,3 +38,4 @@ x-examples:
     codigopostal: string
     adeudo: 0
     propietarioActual: string
+description: Datos para crear un predial

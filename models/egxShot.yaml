@@ -15,3 +15,4 @@ x-examples:
       amount: 0
       folio: string
       citizenMail: string
+description: Datos de una notificaion de pago corta
