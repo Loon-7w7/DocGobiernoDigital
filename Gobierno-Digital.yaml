@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Gobierno Digital
   version: 1.1.1
-  description: Gobierno digital es un servicio de ejemplo para los solicitantes del servicio Ventanilla Única
+  description: '![gobiernod.png](assets/images/gobiernod.png)'
   license:
     url: 'https://egx-vu-gobiernodigital.azurewebsites.net'
     name: Egob
