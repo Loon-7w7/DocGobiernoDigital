@@ -121,19 +121,16 @@ paths:
         name: Clave
         in: path
         description: Clave del predial
-        required: true
       - schema:
           type: string
         name: Propietario
         in: path
         description: Propietario del predial
-        required: true
       - schema:
           type: string
         name: Direccion
         in: path
         description: Dirección del propietario
-        required: true
   /api/AuthCatsatral/GetAuntCatastral:
     post:
       tags:
